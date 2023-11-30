@@ -4,8 +4,7 @@
 
 @push('style')
     <!-- CSS Libraries -->
-    <link rel="stylesheet"
-        href="{{ asset('library/selectric/public/selectric.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/selectric/public/selectric.css') }}">
 @endpush
 
 @section('main')
@@ -15,21 +14,23 @@
         </div>
 
         <div class="card-body">
+
             <form method="POST">
-                    @csrf
+                @csrf
                 <div class="form-group ">
-                        <label for="frist_name">Name</label>
-                        <input id="frist_name" type="text"
-                            class="form-control @error('name')>
-                        is-invalid
-                        @enderror"
-                            name="name" autofocus>
-                        @error('name')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
+                    <label for="frist_name">Name</label>
+                    <input id="frist_name" type="text"
+                        class="form-control @error('name')
+                    is-invalid
+
+                    @enderror"
+                        name="name" autofocus>
+                    @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email"
@@ -42,39 +43,39 @@
                     </div>
                     @error('email')
                         <div class="invalid-feedback">
-                            {{ $message}}
+                            {{ $message }}
                         </div>
                     @enderror
                 </div>
-                    <div class="form-group">
-                        <label for="password" class="d-block">Password</label>
-                        <input id="password"  type="password"
-                            class="form-control @error('password')
-                        is-invalid
+                <div class="form-group ">
+                    <label for="password" class="d-block">Password</label>
+                    <input id="password" type="password"
+                        class="form-control @error('password')
+                     is-invalid
 
-                        @enderror"
-                            name="password">
-                        @error('email')
-                            <div class="invalid-feedback">
-                                {{ $message}}
-                            </div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="password2" class="d-block">Password Confirmation</label>
-                        <input id="password2"  type="password"
-                            class="form-control @error('password2')
-                        is-invalid
+                    @enderror"
+                        name="password">
+                    @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="password2" class="d-block">Password Confirmation</label>
+                    <input id="password2" type="password"
+                        class="form-control @error('password2')
+                     is-invalid
 
-                        @enderror"
-                            name="password_confirmation">
-                        @error('email')
-                            <div class="invalid-feedback">
-                                {{ $message}}
-                            </div>
-                        @enderror
-                    </div>
-                
+                    @enderror"
+                        name="password_confirmation">
+                    @error('password2')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">
                         Register

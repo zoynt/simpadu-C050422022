@@ -15,9 +15,7 @@
         </div>
 
         <div class="card-body">
-            <form method="POST"
-                action="{{route('login')}}"
-                class="needs-validation" novalidate="">
+            <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -27,19 +25,19 @@
                     @enderror"
                         name="email" tabindex="1" autofocus>
                     @error('email')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                        @enderror
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+
                 </div>
 
                 <div class="form-group">
                     <div class="d-block">
-                        <label for="password"
-                            class="control-label">Password</label>
+                        <label for="password" class="control-label">Password</label>
                         <div class="float-right">
-                            
-                            {{-- {{ route('password.request')}} --}}
+
+                            {{-- {{ route('password.request') }} --}}
                             <a href="#" class="text-small">
                                 Forgot Password?
                             </a>
@@ -49,36 +47,26 @@
                         class="form-control @error('password')
                         is-invalid
                     @enderror"
-                        name="password" tabindex="2" >
+                        name="password" tabindex="2">
                     @error('password')
-                    <div class="invalid-feedback">
-                        please fill in your password
-                            </div>
-                        @enderror
-                    </div>
-
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox"
-                            name="remember"
-                            class="custom-control-input"
-                            tabindex="3"
-                            id="remember-me">
-                        <label class="custom-control-label"
-                            for="remember-me">Remember Me</label>
-                    </div>
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                         Login
                     </button>
-                    </div>
-                </form>
-            </div>
+                </div>
+            </form>
+
         </div>
+
+    </div>
     <div class="text-muted mt-5 text-center">
-        Don't have an account? <a href="{{ route('register') }}">Create One</a>
+        Don't have an account? <a href="{{route('register')}}">Create One</a>
     </div>
 @endsection
 
