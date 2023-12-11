@@ -13,9 +13,7 @@
         </div>
 
         <div class="card-body">
-            <form method="POST"
-                action="<?php echo e(route('login')); ?>"
-                class="needs-validation" novalidate="">
+            <form method="POST" action="<?php echo e(route('login')); ?>" class="needs-validation" novalidate="">
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -36,22 +34,22 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                    <div class="invalid-feedback">
-                        <?php echo e($message); ?>
+                        <div class="invalid-feedback">
+                            <?php echo e($message); ?>
 
-                    </div>
-                        <?php unset($message);
+                        </div>
+                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+
                 </div>
 
                 <div class="form-group">
                     <div class="d-block">
-                        <label for="password"
-                            class="control-label">Password</label>
+                        <label for="password" class="control-label">Password</label>
                         <div class="float-right">
-                            
+
                             
                             <a href="#" class="text-small">
                                 Forgot Password?
@@ -69,41 +67,32 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                        name="password" tabindex="2" >
+                        name="password" tabindex="2">
                     <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                    <div class="invalid-feedback">
-                        please fill in your password
-                            </div>
-                        <?php unset($message);
+                        <div class="invalid-feedback">
+                            <?php echo e($message); ?>
+
+                        </div>
+                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                    </div>
-
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox"
-                            name="remember"
-                            class="custom-control-input"
-                            tabindex="3"
-                            id="remember-me">
-                        <label class="custom-control-label"
-                            for="remember-me">Remember Me</label>
-                    </div>
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                         Login
                     </button>
-                    </div>
-                </form>
-            </div>
+                </div>
+            </form>
+
         </div>
+
+    </div>
     <div class="text-muted mt-5 text-center">
         Don't have an account? <a href="<?php echo e(route('register')); ?>">Create One</a>
     </div>
