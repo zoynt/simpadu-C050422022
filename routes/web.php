@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,13 @@ Route::get('/', function () {
     return view('pages.auth.auth-login', ['type_menu' => '']);
 });
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
 
-    Route::get('home',function () {
-        return view('pages.app.dashboard-simpadu',['type_menu' => '']);      
+    Route::get('home', function () {
+        return view('pages.app.dashboard-simpadu', ['type_menu' => '']);
     })->name('home');
     Route::resource('user', UserController::class);
+    Route::resource('subject', SubjectController::class);
 });
 
 Route::get('profile', function () {
@@ -37,6 +39,7 @@ Route::get('settings', function () {
 Route::get('general-settings', function () {
     return view('pages.app.features-setting-detail', ['type_menu' => '']);
 });
+
 // Route::get('/profile', function () {
 //     return view('pages.app.features-profile');
 //     })->name('profile');

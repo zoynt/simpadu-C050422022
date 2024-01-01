@@ -21,7 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(
             [
                 userSeeder::class,
+                SubjectSeeder::class,
+                ScheduleSeeder::class,
             ]
-            );
+        );
     }
 }
