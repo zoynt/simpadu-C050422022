@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSubjectRequest;
 use App\Http\Requests\UpdateSubjectRequest;
+use App\Http\Requests\StoreSubjectRequestSubjectRequest;
 use App\Models\Subject;
 use App\Http\Requests\StoreUserRequest;
 use Illuminate\Http\Request;
@@ -17,8 +19,8 @@ class SubjectController extends Controller
     public function index(Request $request)
     {
         $subjects = DB::table('subjects')
-        ->when($request->input('lecturer_id'), function ($query, $lecturer_id) {
-            return $query->where('lecturer_id', 'like', '%' . $lecturer_id . '%');
+        ->when($request->input('title'), function ($query, $title) {
+            return $query->where('title', 'like', '%' . $title . '%');
         })
         ->select('id', 'title','lecturer_id', 'semester', 'academic_year', 'sks', DB::raw('DATE_FORMAT(created_at, "%d %M %Y") as created_at'))
         ->orderBy('id', 'asc')
@@ -33,17 +35,12 @@ class SubjectController extends Controller
         return view('pages.subject.create');
     }
 
-    public function store(StoreUserRequest $request)
+    public function store(StoreSubjectRequest $request)
     {
-        // $request->validate([
-        //     'title' => 'required',
-        //     'sks' => 'required',
-        //     // tambahkan validasi untuk kolom lain jika diperlukan
-        // ]);
         Subject::create([
             'title'=> $request['title'],
-            'semester'=> $request['semester'],
             'lecturer_id'=> $request['lecturer_id'],
+            'semester'=> $request['semester'],
             'academic_year'=> ($request['academic_year']),
             'sks'=> $request['sks'],
             'code'=> $request['code'],

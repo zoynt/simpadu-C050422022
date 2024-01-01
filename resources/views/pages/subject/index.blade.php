@@ -8,7 +8,6 @@
 @endpush
 
 @section('main')
-    <h1>Ayam</h1>
     <div class="main-content">
         <section class="section">
             <div class="section-header">
@@ -34,7 +33,7 @@
                             <div class="card-header">
                                 <h4>All Users</h4>
                                 <div class="section-header-button">
-                                    <a href="{{ route('subject.create') }}" class="btn btn-primary">New User</a>
+                                    <a href="{{ route('subject.create') }}" class="btn btn-success">New User</a>
                                 </div>
                             </div>
                             <div class="card-body">

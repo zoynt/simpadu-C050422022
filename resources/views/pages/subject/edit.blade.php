@@ -35,55 +35,36 @@
                                     is-invalid
                                 @enderror"
                                     name="title" value="{{ $subject->title }}">
-                                @error('title')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
                             </div>
                            
                             <div class="form-group">
                                 <label>semester</label>
                                 <input type="semester"
-                                    class="form-control @error('semester')
-                                    is-invalid
-                                @enderror"
+                                    class="form-control"
                                     name="semester" value="{{ $subject->semester }}">
-                                @error('semester')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                               
                             </div>
                             
                             <div class="form-group">
                                 <label>lecturer_id</label>
                                 <input type="lecturer_id"
-                                    class="form-control @error('lecturer_id')
-                                    is-invalid
-                                @enderror"
+                                    class="form-control"
                                     name="lecturer_id" value="{{ $subject->lecturer_id }}">
-                                @error('lecturer_id')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label>academic_year</label>
                                 <input type="academic_year"
-                                    class="form-control @error('academic_year')
-                                    is-invalid
-                                @enderror"
+                                    class="form-control"
                                     name="academic_year" value="{{ $subject->academic_year }}">
-                                @error('academic_year')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
                             </div>
 
+                            <div class="form-group">
+                                <label>sks</label>
+                                <input type="text"
+                                    class="form-control"
+                                    name="sks" value="{{ $subject->sks}}">
+                            </div>
                             
                             <div class="form-group">
                                 <label>code</label>
@@ -100,8 +81,8 @@
                             </div>
                             
                             <div class="form-group mb-0">
-                                <label>Description</label>
-                                <textarea class="form-control" data-height="150" name="Description"></textarea>
+                                <label>dscription</label>
+                                <textarea class="form-control" data-height="150" name="description">{{ $subject->description }}</textarea>
                             </div>
                             <!-- <div class="form-group">
                                 <label>Phone</label>

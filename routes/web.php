@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ScheduleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('home');
     Route::resource('user', UserController::class);
     Route::resource('subject', SubjectController::class);
+    Route::resource('schedule',ScheduleController::class);
 });
 
 Route::get('profile', function () {

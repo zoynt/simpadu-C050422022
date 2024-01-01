@@ -13,7 +13,7 @@
                 <h1>New Subject</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Subjects</a></div>
+                    <div class="breadcrumb-item"><a href="#">Users</a></div>
                     <div class="breadcrumb-item">New Subject</div>
                 </div>
             </div>
@@ -28,10 +28,10 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label>title</label>
+                                <label>Title</label>
                                 <input type="text"
                                     class="form-control @error('title')
-                                    is-invalid 
+                                    is-invalid
                                 @enderror"
                                     name="title">
                                 @error('title')
@@ -40,23 +40,8 @@
                                     </div>
                                 @enderror
                             </div>
-
                             <div class="form-group">
-                                <label>semester</label>
-                                <input type="text"
-                                    class="form-control @error('semester')
-                                    is-invalid
-                                @enderror"
-                                    name="semester">
-                                @error('semester')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>lecturer_id</label>
+                                <label>Lecturer</label>
                                 <input type="text"
                                     class="form-control @error('lecturer_id')
                                     is-invalid
@@ -68,9 +53,21 @@
                                     </div>
                                 @enderror
                             </div>
-
                             <div class="form-group">
-                                <label>academic_year</label>
+                                <label>Semester</label>
+                                <input type="text"
+                                    class="form-control @error('semester')
+                                    is-invalid
+                                @enderror"
+                                    name="semester">
+                                @error('semester')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Academic Year</label>
                                 <input type="text"
                                     class="form-control @error('academic_year')
                                     is-invalid
@@ -82,10 +79,21 @@
                                     </div>
                                 @enderror
                             </div>
-
-                            
                             <div class="form-group">
-                                <label>code</label>
+                                <label>SKS</label>
+                                <input type="text"
+                                    class="form-control @error('sks')
+                                    is-invalid
+                                @enderror"
+                                    name="sks">
+                                @error('sks')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Code</label>
                                 <input type="text"
                                     class="form-control @error('code')
                                     is-invalid
@@ -97,35 +105,10 @@
                                     </div>
                                 @enderror
                             </div>
-                            
                             <div class="form-group mb-0">
                                 <label>Description</label>
-                                <textarea class="form-control" data-height="150" name="Description"></textarea>
+                                <textarea class="form-control" data-height="150" name="description"></textarea>
                             </div>
-
-                            <!-- <div class="form-group">
-                                <label class="form-label">Roles</label>
-                                <div class="selectgroup w-100">
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="admin" class="selectgroup-input"
-                                            checked="">
-                                        <span class="selectgroup-button">Admin</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="dosen" class="selectgroup-input">
-                                        <span class="selectgroup-button">Dosen</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="mahasiswa" class="selectgroup-input">
-                                        <span class="selectgroup-button">Mahasiswa</span>
-                                    </label>
-
-                                </div>
-                            </div> -->
-                            <!-- <div class="form-group mb-0">
-                                <label>Address</label>
-                                <textarea class="form-control" data-height="150" name="address"></textarea>
-                            </div> -->
                         </div>
                         <div class="card-footer text-right">
                             <button class="btn btn-primary">Submit</button>

@@ -26,9 +26,9 @@ class UpdateSubjectRequest extends FormRequest
                 'semester' => 'string|max:80',
                 'lecturer_id' => 'string|max:80',
                 'academic_year' => 'string|max:80',
-                'sks' => 'string|max:80',
-                'code' => 'string|max:80',
-                'description' => 'string|max:80',
+                'sks' => 'integer',
+                'code' => 'string|max:8',
+                'description' => 'string',
             ];
     }
 }
